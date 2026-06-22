@@ -1,0 +1,152 @@
+:root {
+  --bg: #faf6f2;
+  --text: #3d352e;
+  --primary: #d4b5b0;
+  --secondary: #b8a094;
+  --highlight: #fcf8f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.hero {
+  padding: 2rem 0 1.5rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+.hero h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+.booking-form {
+  background: var(--secondary);
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--highlight);
+}
+
+.booking-form h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  color: var(--text)
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--highlight);
+  border-radius: 6px;
+  font-size: 1rem;
+  background: var(--primary);
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+}
+
+.price-summary {
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 1.25rem 0;
+}
+
+.price-summary h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.service-detail {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  margin-top: 0.25rem;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.85rem;
+  background: var(--primary);
+  color: var(--highlight);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: var(--secondary);
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  color: var(--secondary);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .booking-form {
+    padding: 1.25rem;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #2a2420;
+    --text: #e6ddd4;
+    --primary: #c9a89e;
+    --secondary: #8f7a72;
+    --highlight: #3d352e;
+  }
+
+  .booking-form {
+    background: #332c27;
+    border-color: #5c4e47;
+  }
+}
