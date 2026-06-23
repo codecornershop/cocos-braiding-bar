@@ -4,6 +4,7 @@
   --primary: #d4b5b0;
   --secondary: #b8a094;
   --highlight: #fcf8f5;
+  --border: #a68e84;
 }
 
 * {
@@ -65,12 +66,35 @@ h1, h2, h3 {
   color: var(--text)
 }
 
+fieldset.form-group {
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text);
+}
+
 .section-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  background: var(--primary);
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.section-header .form-label,
+.section-header .toggle-icon {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.section-content {
+  color: var(--text);
 }
 
 .toggle-icon {
@@ -81,6 +105,66 @@ h1, h2, h3 {
 
 .form-group {
   margin-bottom: 1.25rem;
+}
+
+.collapsible-addons {
+  margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+.collapsible-addons .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem 0.1rem;
+  border-bottom: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.collapsible-addons .section-content {
+  padding-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--highlight);
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+
+.checkbox-option:hover {
+  background: var(--bg);
+  border-color: var(--primary);
+}
+
+.checkbox-option .addon-label {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+.checkbox-option .addon-price {
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+
+.add-on-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--text);
 }
 
 .form-group label {
@@ -175,5 +259,12 @@ footer {
   .booking-form {
     background: #332c27;
     border-color: #5c4e47;
+  }
+
+  .form-group label,
+  .add-on-label,
+  .section-header,
+  .section-content {
+    color: var(--text)
   }
 }

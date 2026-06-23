@@ -83,7 +83,7 @@ const App: Component = () => {
     const data = formData();
     const service = selectedService();
 
-    if (!data.name || !data.phone || !data.service || !data.date || !data.time) {
+    if (!data.name || !data.phone || !data.service || !data.date ) {
       alert('Please fill in all required fields.');
       return;
     }
@@ -102,10 +102,9 @@ const App: Component = () => {
     *Add-ons:* ${addOnsList || 'None'}%0A
     *Approximate Total:* R${totalPrice()}%0A
     *Date:* ${data.date}%0A
-    *Time:* ${data.time}%0A
     *Notes:* ${data.notes || 'None'}`;
 
-    const phone = '27820000000'
+    const phone = '27743500478'
     window.open(`https://wa.me/${phone}?text=${message}`,'_blank');
   
   };
@@ -186,19 +185,24 @@ const App: Component = () => {
             </select>
           </div>
 
-          <div class="form-group collapsible">
-            <div class="section-header" onClick={() => setShowAddOns(!showAddOns())}>
-              <label>Add-ons (optional)</label>
+          {/* Add Ons */}
+          <p class="add-on-label">Add-ons (optional): </p>
+          <fieldset class="form-group collapsible-addons">
+            <legend class="section-header" onClick={() => setShowAddOns(!showAddOns())}>
+              <span class="form-label">Choose add-on</span>
               <span class="toggle-icon" style={{ transform: showAddOns() ? 'rotate(0deg)' : 'rotate(-90deg)' }}>
                 ▾
               </span>
-            </div>
+            </legend>
             {showAddOns() && (
               <div class="section-content">
                 <For each={addOns()}>
                   {(addOn) => (
                     <label class="checkbox-option">
-                      <span>{addOn.name} - R{addOn.price}</span>
+                      <span class="addon-label">
+                        <span>{addOn.name}</span>
+                        <span class="addon-price">+R{addOn.price}</span>
+                      </span>
                       <input
                         type="checkbox"
                         checked={selectedAddOns().includes(addOn.id)}
@@ -209,7 +213,7 @@ const App: Component = () => {
                 </For>
               </div>
             )}
-          </div>
+          </fieldset>
 
           {/* Date */}
           <div class="form-group">
