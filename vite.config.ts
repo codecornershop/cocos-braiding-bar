@@ -10,5 +10,5 @@ export default defineConfig({
   build: {
     target: 'esnext',
   },
-  base: process.env.NODE_ENV === 'production' ? '/cocos-braiding-bar/' : '/'
+  base: import.meta.env.PROD ? '/cocos-braiding-bar/' : '/'
 });
