@@ -130,7 +130,7 @@ const App: Component = () => {
         <h1 class="sr-only">Coco's Braiding Bar</h1>
         <div class="hero-logo">
           <img 
-            src={isDark() ? '/logo-dark-mode.svg' : 'logo-light-mode.svg'} 
+            src={isDark() ? `${import.meta.env.BASE_URL}logo-dark-mode.svg' : '${import.meta.env.BASE_URL}logo-light-mode.svg`} 
             alt="coco's braiding bar logo" 
             class="logo" 
           />
