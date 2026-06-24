@@ -2,7 +2,7 @@
 
 > WhatsApp-based booking system for a hair stylist. 
 
-[Live Demo](https://codecornershop.github.io/salon-booking)
+[Live Demo](https://codecornershop.github.io/cocos-braiding-bar)
 [Feedback](mailto:dillon.jason.daniels@gmail.com)
 
 ---
