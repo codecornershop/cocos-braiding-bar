@@ -1,10 +1,13 @@
 :root {
-  --bg: #faf6f2;
-  --text: #3d352e;
-  --primary: #d4b5b0;
-  --secondary: #b8a094;
-  --highlight: #fcf8f5;
-  --border: #a68e84;
+  --bg: #0d0d0d;
+  --bg-light: #1a1a1a;
+  --text: #e6e0d6;
+  --text-muted: #a69e94;
+  --primary: #d4af37;
+  --primary-dark: #b8962e;
+  --secondary: #8a7a6a;
+  --highlight: #2a241e;
+  --border: #3a322a;
 }
 
 * {
@@ -54,10 +57,10 @@ h1, h2, h3 {
 }
 
 .booking-form {
-  background: var(--secondary);
+  background: var(--bg-light);
   padding: 2rem 1.5rem;
   border-radius: 12px;
-  border: 1px solid var(--highlight);
+  border: 1px solid var(--primary-dark);
 }
 
 .booking-form h2 {
@@ -80,7 +83,8 @@ fieldset.form-group {
   cursor: pointer;
   padding: 0.5rem 0.75rem 0;
   border-bottom: 1px solid var(--border);
-  background: var(--primary);
+  background: var(--bg-light);
+  color: var(--text);
   margin-bottom: 1rem;
   width: 100%;
 }
@@ -101,6 +105,7 @@ fieldset.form-group {
   display: inline-block;
   transition: transform 0.2s ease;
   font-size: 1.2rem;
+  color: var(--text-muted);
 }
 
 .form-group {
@@ -180,13 +185,14 @@ fieldset.form-group {
   border: 1px solid var(--highlight);
   border-radius: 6px;
   font-size: 1rem;
-  background: var(--primary);
+  background: var(--bg-light);
+  color: var(--text);
   transition: border-color 0.2s ease;
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
   outline: none;
-  border-color: var(--secondary);
+  border-color: var(--primary-dark);
 }
 
 .price-summary {
@@ -210,16 +216,20 @@ fieldset.form-group {
 }
 
 .submit-btn {
-  width: 100%;
-  padding: 0.85rem;
-  background: var(--primary);
-  color: var(--highlight);
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  padding: 0.65rem;
+  background: var(--bg-light);
+  color: var(--text-muted);
   border: none;
   border-radius: 8px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease;
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .submit-btn:hover {
@@ -244,27 +254,5 @@ footer {
 
   .hero h1 {
     font-size: 1.75rem;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #2a2420;
-    --text: #e6ddd4;
-    --primary: #c9a89e;
-    --secondary: #8f7a72;
-    --highlight: #3d352e;
-  }
-
-  .booking-form {
-    background: #332c27;
-    border-color: #5c4e47;
-  }
-
-  .form-group label,
-  .add-on-label,
-  .section-header,
-  .section-content {
-    color: var(--text)
   }
 }
