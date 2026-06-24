@@ -1,4 +1,4 @@
-import { createSignal, type Component, For, onMount, onCleanup } from 'solid-js';
+import { createSignal, type Component, For } from 'solid-js';
 import './style.css';
 
 const App: Component = () => {
@@ -109,27 +109,13 @@ const App: Component = () => {
   
   };
 
-  const [isDark, setIsDark] = createSignal(false);
-
-  onMount(() => {
-    // Check user's system preference
-    const darkMode = window.matchMedia('(prefers-color-scheme:dark)');
-    setIsDark(darkMode.matches);
-
-    // Listen for changes
-    const handler = (e: MediaQueryListEvent) => setIsDark(e.matches);
-    darkMode.addEventListener('change', handler);
-
-    onCleanup(() => darkMode.removeEventListener('change', handler));
-  });
-
   return (
     <div class="container">
       <header class="hero">
         <h1 class="sr-only">Coco's Braiding Bar</h1>
         <div class="hero-logo">
           <img 
-            src={isDark() ? `${import.meta.env.BASE_URL}logo-dark-mode.svg` : `${import.meta.env.BASE_URL}logo-light-mode.svg`} 
+            src={`${import.meta.env.BASE_URL}logo-dark-mode.svg`}
             alt="coco's braiding bar logo" 
             class="logo" 
           />
